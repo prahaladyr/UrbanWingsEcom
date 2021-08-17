@@ -1,0 +1,42 @@
+{%extends 'store/main.html'%} {%load static%} {%block content%}
+
+<link rel="stylesheet" href="{% static 'css/product.css' %}" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<div class="row">
+  <div class="column">
+    {% for product in products %}
+    <div class="card">
+      <h3>{{product.name}}</h3>
+      <h5>CODE: ASDJGQ</h5>
+      <img src="{{product.imageURL}}" alt="Denim Jeans" />
+      <div class="paragh">
+        <p>-100% Original Products</p>
+        <p>-Pay on delivery might be available</p>
+        <p>-Easy 30 days returns and exchanges</p>
+        <p>-Try & Buy might be available</p>
+      </div>
+      <div class="button-menu">
+        <button class="button">
+          Add to Cart<i class="fa fa-shopping-cart" style="font-size: 20px"></i>
+        </button>
+        
+        <h4
+          style="
+            padding-left: 10px;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+          "
+        >
+          ₹{{product.price|floatformat:2}}
+        </h4>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{%endblock content%}

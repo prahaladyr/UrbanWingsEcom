@@ -1,0 +1,79 @@
+{%extends 'store/main.html'%} {%load static%} {%block content%}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}" />
+
+<div class="row">
+  <div class="column">
+    <div class="card1">
+      <div class="butten-menu">
+        <a href="{% url 'store' %}">
+          <button class="button1">
+            <img src="{% static 'images/arrowleft.png' %}" alt="" />
+            Continue Shopping
+          </button>
+        </a>
+        <span></span>
+        <span></span>
+        <a href="{% url 'checkout' %}">
+          <button class="button2">
+            Checkout
+            <img src="{% static 'images/arrowright.png' %}" alt="" />
+          </button>
+        </a>
+      </div>
+      <hr />
+      <div class="table1">
+        <h3>Items: <strong>{{order.get_cart_items}} </strong></h3>
+        <h3>
+          Total: <strong>₹ {{order.get_cart_total| floatformat:2}}</strong>
+        </h3>
+      </div>
+      <hr />
+    </div>
+
+    <div class="card2">
+      <div class="table2">
+        <div></div>
+        <div><strong>Item</strong></div>
+        <div><strong>Price</strong></div>
+        <div><strong>Quantity</strong></div>
+        <div><strong>Total</strong></div>
+      </div>
+      <hr />
+      {% for item in items %}
+      <div class="table2">
+        <div>
+          <img
+            src="{{item.product.imageURL}}"
+            class="product-img"
+            alt="Denim Jeans"
+          />
+        </div>
+        <div><strong>{{item.product.name}}</strong></div>
+        <div><strong>₹{{item.product.price|floatformat:2}}</strong></div>
+        <div>
+          <img
+            data-product={{item.product.id}}
+            data-action="add"
+            id="arrow"
+            class="update-cart"
+            src="{% static 'images/arrowup.png' %}"
+            alt=""
+          />
+          <strong>{{item.quantity}}</strong
+          ><img
+            data-product={{item.product.id}}
+            data-action="remove"
+            id="arrow"
+            class="update-cart"
+            src="{% static 'images/arrowdown.png' %}"
+            alt=""
+          />
+        </div>
+        <div><strong>₹{{item.get_total}} </strong></div>
+      </div>
+      <hr />
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{%endblock content%}
