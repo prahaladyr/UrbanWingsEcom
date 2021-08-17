@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.column {
+  display: grid;
+  grid-template-columns: repeat(6, 2fr);
+  grid-auto-rows: 3;
+  grid-gap: 1rem;
+  padding: 100px 50px;
+}
+@media screen and (max-width: 1600px) {
+  .column {
+    grid-template-columns: repeat(5, 2fr);
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .column {
+    grid-template-columns: repeat(4, 2fr);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .column {
+    grid-template-columns: repeat(3, 2fr);
+  }
+}
+
+@media screen and (max-width: 865px) {
+  .column {
+    grid-template-columns: repeat(2, 2fr);
+  }
+}
+@media screen and (max-width: 594px) {
+  .column {
+    grid-template-columns: repeat(1, 2fr);
+  }
+}
+
+h4 {
+  display: flex;
+  font-size: 15px;
+  padding-left: 10px;
+  justify-content: start;
+  font-family: "Roboto Condensed", sans-serif;
+  // padding-top: 13px;
+}
+h5 {
+  display: flex;
+  padding-left: 10px;
+  justify-content: start;
+  color: darkgray;
+  font-family: "Roboto Condensed", sans-serif;
+  padding-top: 3px;
+}
+
+img {
+  padding-top: 5px;
+  width: 13em;
+  height: 15em;
+  // border-radius: 5px;
+}
+
+.card {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  height: 100%;
+  // border-radius: 5px;
+  text-align: center;
+  font-family: arial;
+  background-color: white;
+  //   padding: 20px;
+}
+.button-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  margin: 15px 5px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: black;
+  border: 2px solid #cbb40b;
+  cursor: pointer;
+  color: white;
+}
+.button:hover {
+  background-color: darkgray;
+  border: 2px solid darkgray;
+}
+.fa {
+  padding-left: 10px;
+}
+
+.img-container {
+  margin: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+}
+
+.feature-img {
+  width: auto;
+  height: auto;
+}
+.heading {
+  color: darkgrey;
+  margin: 10px;
+  font-family: "Prompt", sans-serif;
+}
+p {
+  font-family: "Cinzel", serif;
+}
